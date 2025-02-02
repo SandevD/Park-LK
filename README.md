@@ -2,7 +2,7 @@
 
 - [X] orangehill/iseed - Database seeder generation from existing tables
 - [X] barryvdh/laravel-ide-helper - IDE helper for better Laravel development
-- [ ] laravel/pulse - Real-time application monitoring
+- [X] laravel/pulse - Real-time application monitoring
 - [ ] dotswan/filament-laravel-pulse - Laravel Pulse integration for Filament
 - [ ] joaopaulolndev/filament-edit-profile - Profile editing functionality
 - [ ] althinect/filament-spatie-roles-permissions - Role and permission management for Filament
