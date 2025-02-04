@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Enums\ThemeMode;
 use Filament\FontProviders\GoogleFontProvider;
+use Filament\Navigation\NavigationGroup;
 use Joaopaulolndev\FilamentGeneralSettings\FilamentGeneralSettingsPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -40,9 +41,6 @@ class AdminPanelProvider extends PanelProvider
             ->font('DM Sans', provider: GoogleFontProvider::class)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->pages([
-                Pages\Dashboard::class,
-            ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -67,6 +65,29 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogoHeight('2.25rem')
             ->favicon(asset('assets/img/favicon/favicon.ico'))
             ->sidebarCollapsibleOnDesktop()
+            ->navigationGroups([
+                NavigationGroup::make()
+                    ->label('Dashboards')
+                    ->icon(asset('assets/icons/app.png')),
+                NavigationGroup::make()
+                    ->label('Ticket Management')
+                    ->icon(asset('assets/icons/ticket.png')),
+                NavigationGroup::make()
+                    ->label('Location Management')
+                    ->icon(asset('assets/icons/parking-car.png')),
+                NavigationGroup::make()
+                    ->label('User Management')
+                    ->icon(asset('assets/icons/users.png')),
+                NavigationGroup::make()
+                    ->label('Roles and Permissions')
+                    ->icon(asset('assets/icons/lock.png')),
+                NavigationGroup::make()
+                    ->label('Geo Locations')
+                    ->icon(asset('assets/icons/map.png')),
+                NavigationGroup::make()
+                    ->label('Settings')
+                    ->icon(asset('assets/icons/cog.png')),
+            ])
             ->plugins([
                 FilamentGeneralSettingsPlugin::make()
                     ->setSort(3)
@@ -74,6 +95,7 @@ class AdminPanelProvider extends PanelProvider
                     ->setNavigationGroup('Settings')
                     ->setTitle('General Settings')
                     ->setNavigationLabel('General Settings'),
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }
