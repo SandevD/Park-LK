@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -60,8 +61,8 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandLogo(asset('assets/img/aurora_logo_main.png'))
-            ->darkModeBrandLogo(asset('assets/img/aurora_logo_inverted.png'))
+            ->brandLogo(asset('assets/img/parklk-logo.svg'))
+            ->darkModeBrandLogo(asset('assets/img/parklk-logo.svg'))
             ->brandLogoHeight('2.25rem')
             ->favicon(asset('assets/img/favicon/favicon.ico'))
             ->sidebarCollapsibleOnDesktop()
@@ -95,6 +96,7 @@ class AdminPanelProvider extends PanelProvider
                     ->setNavigationGroup('Settings')
                     ->setTitle('General Settings')
                     ->setNavigationLabel('General Settings'),
+                FilamentSpatieRolesPermissionsPlugin::make()
             ])
             ->viteTheme('resources/css/filament/admin/theme.css');
     }
