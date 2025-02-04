@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Enums\ThemeMode;
 use Filament\FontProviders\GoogleFontProvider;
+use Joaopaulolndev\FilamentGeneralSettings\FilamentGeneralSettingsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -65,6 +66,14 @@ class AdminPanelProvider extends PanelProvider
             ->darkModeBrandLogo(asset('assets/img/aurora_logo_inverted.png'))
             ->brandLogoHeight('2.25rem')
             ->favicon(asset('assets/img/favicon/favicon.ico'))
-            ->sidebarCollapsibleOnDesktop();
+            ->sidebarCollapsibleOnDesktop()
+            ->plugins([
+                FilamentGeneralSettingsPlugin::make()
+                    ->setSort(3)
+                    ->setIcon('heroicon-o-cog')
+                    ->setNavigationGroup('Settings')
+                    ->setTitle('General Settings')
+                    ->setNavigationLabel('General Settings'),
+            ]);
     }
 }
