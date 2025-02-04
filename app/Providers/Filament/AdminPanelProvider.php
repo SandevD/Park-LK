@@ -107,7 +107,11 @@ class AdminPanelProvider extends PanelProvider
                     ->shouldShowDeleteAccountForm(false)
                     ->shouldShowSanctumTokens()
                     ->shouldShowBrowserSessionsForm(true)
-                    ->shouldShowAvatarForm(),
+                    ->shouldShowAvatarForm(
+                        value: true,
+                        directory: 'avatars',
+                        rules: 'mimes:jpeg,png|max:1024'
+                    ),
             ])
             ->userMenuItems([
                 'profile' => MenuItem::make()
