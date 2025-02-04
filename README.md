@@ -22,8 +22,8 @@
 
 ## Functional TODOs
 
-- [ ] Base Migrations
-- [ ] Base Models
+- [X] Base Migrations
+- [X] Base Models
 - [ ] Base Relationships
 - [ ] Parking Layouts Filament Resource
 - [ ] Parking Locations Filament Resource
