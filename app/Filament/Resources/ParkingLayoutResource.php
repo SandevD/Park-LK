@@ -29,7 +29,7 @@ class ParkingLayoutResource extends Resource
     {
         return $form
             ->schema([
-                //
+                
             ]);
     }
 
