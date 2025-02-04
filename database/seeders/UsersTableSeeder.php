@@ -14,25 +14,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
+
         \DB::table('users')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
-                'name' => 'Test User',
-                'email' => 'test@example.com',
-                'email_verified_at' => '2025-02-02 12:44:15',
-                'password' => '$2y$12$TIXVgY4IRBprg/CZ.A5h..QAAs82pygBewXJuyT4t6J7FEcm63T36',
-                'remember_token' => 'qdnMAp1LUL',
-                'created_at' => '2025-02-02 12:44:15',
-                'updated_at' => '2025-02-02 12:44:15',
-            ),
-            1 => 
-            array (
-                'id' => 2,
                 'name' => 'admin',
                 'email' => 'admin@park.lk',
                 'email_verified_at' => NULL,
@@ -42,7 +31,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2025-02-02 12:44:43',
             ),
         ));
-        
-        
+
+
     }
 }
