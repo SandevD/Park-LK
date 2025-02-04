@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar_url'
     ];
 
     /**
@@ -47,6 +48,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    // Avatar
+    public function getFilamentAvatarUrl(): ?string
+    {
+        if ($this->avatar_url) {
+            return env('APP_URL') . '/' . $this->avatar_url;
+        }
+        return $this->avatar_url;
     }
 
     // Relationships
