@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignId('parking_location_id')->references('id')->on('parking_locations')->cascadeOnDelete();
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+            $table->integer('price');
+            $table->string('status');
             $table->timestamps();
         });
     }
