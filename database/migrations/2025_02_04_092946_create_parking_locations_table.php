@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('parking_locations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('city_id')->references('id')->on('cities')->cascadeOnDelete();
             $table->timestamps();
         });
     }
