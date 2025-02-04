@@ -7,6 +7,7 @@ use App\Filament\Resources\CustomerResource\RelationManagers;
 use App\Models\Customer;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -30,7 +31,7 @@ class CustomerResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make('roles')->multiple()->relationship('roles', 'name'),
             ]);
     }
 

@@ -7,6 +7,7 @@ use App\Filament\Resources\CompanyAdminResource\RelationManagers;
 use App\Models\CompanyAdmin;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -30,7 +31,7 @@ class CompanyAdminResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make('roles')->multiple()->relationship('roles', 'name'),
             ]);
     }
 
