@@ -17,7 +17,7 @@
 ## Setup TODOs
 
 - [X] Filament Database Notifications
-- [ ] Mailgun Service Integration
+- [X] Mailgun Service Integration
 - [ ] SMS Gateway Service Integration
 - [ ] Payment Gateway Service Integration
 
@@ -26,9 +26,10 @@
 - [X] Base Migrations
 - [X] Base Models
 - [X] Base Relationships
-- [ ] Parking Layouts Filament Resource
-- [ ] Parking Locations Filament Resource
-- [ ] Bookings Filament Resource
+- [X] Parking Layouts Filament Resource
+- [X] Parking Locations Filament Resource
+- [X] All User Types Filament Resources
+- [X] Bookings Filament Resource
 - [ ] Initiate Filament Customer Panel ( APP )
 - [ ] Livewire Location Search
 - [ ] Mapbox Integration
