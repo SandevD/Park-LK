@@ -19,12 +19,13 @@
 - [X] Filament Database Notifications
 - [ ] Mailgun Service Integration
 - [ ] SMS Gateway Service Integration
+- [ ] Payment Gateway Service Integration
 
 ## Functional TODOs
 
 - [X] Base Migrations
 - [X] Base Models
-- [ ] Base Relationships
+- [X] Base Relationships
 - [ ] Parking Layouts Filament Resource
 - [ ] Parking Locations Filament Resource
 - [ ] Bookings Filament Resource
