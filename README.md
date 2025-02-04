@@ -12,3 +12,25 @@
 - [ ] symfony/mailgun-mailer - Mailgun integration for emails
 - [ ] maatwebsite/excel - Excel and CSV file handling
 - [ ] leandrocfe/filament-apex-charts - ApexCharts integration for Filament
+
+
+## Setup TODOs
+
+- [X] Filament Database Notifications
+- [ ] Mailgun Service Integration
+- [ ] SMS Gateway Service Integration
+
+## Functional TODOs
+
+- [X] Base Migrations
+- [X] Base Models
+- [ ] Base Relationships
+- [ ] Parking Layouts Filament Resource
+- [ ] Parking Locations Filament Resource
+- [ ] Bookings Filament Resource
+- [ ] Initiate Filament Customer Panel ( APP )
+- [ ] Livewire Location Search
+- [ ] Mapbox Integration
+- [ ] Livewire Booking Component
+- [ ] Initiate Filament Organization Panel ( ORG )
+
