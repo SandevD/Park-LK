@@ -7,6 +7,7 @@ use App\Filament\Resources\AdminResource\RelationManagers;
 use App\Models\Admin;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -30,7 +31,7 @@ class AdminResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make('roles')->multiple()->relationship('roles', 'name'),
             ]);
     }
 
@@ -38,7 +39,6 @@ class AdminResource extends Resource
     {
         return $table
             ->columns([
-                //
             ])
             ->filters([
                 //
