@@ -29,7 +29,24 @@ class ParkingLayoutResource extends Resource
     {
         return $form
             ->schema([
-                
+                Section::make('Add the details to create seat layouts.')
+                    ->schema([
+                        TextInput::make('name')
+                            ->label('Name')
+                            ->required()
+                            ->columnSpan(2),
+                        Select::make('company_id')
+                            ->label('Company')
+                            ->relationship('company', 'name')
+                            ->searchable()
+                            ->required(),
+                        Textarea::make('seats')
+                            ->label('Seats')
+                            ->autosize()
+                            ->rows(10)
+                            ->cols(20)
+                            ->required(),
+                    ])->columnSpan(2)->columns(2),
             ]);
     }
 
