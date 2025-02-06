@@ -31,10 +31,11 @@ class CityResource extends Resource
     // ---Global Search Results Start---
     protected static ?string $recordTitleAttribute = 'name_en';
 
-    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
+    public static function getGlobalSearchResultTitle(Model $record): string|Htmlable
     {
         return $record->name_en . ' | ' . $record->name_si . ' | ' . $record->name_ta;
     }
+
     // ---Global Search Results End---
 
     public static function form(Form $form): Form
