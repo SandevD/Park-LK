@@ -6,13 +6,16 @@ namespace App\Models;
 
 use Althinect\FilamentSpatieRolesPermissions\Concerns\HasSuperAdmin;
 use Filament\Models\Contracts\HasAvatar;
+use Filament\Panel;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Traits\HasRoles;
+use Filament\Models\Contracts\FilamentUser;
 
-class User extends Authenticatable implements HasAvatar
+class User extends Authenticatable implements MustVerifyEmail, HasAvatar
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasRoles, HasSuperAdmin;
@@ -62,6 +65,12 @@ class User extends Authenticatable implements HasAvatar
         return $this->avatar_url;
     }
 
+    // Filament Panel Access
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
+
     // Relationships
     public function city()
     {
@@ -71,5 +80,25 @@ class User extends Authenticatable implements HasAvatar
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    // Scopes
+    public function scopeIsSuperAdmin($query)
+    {
+        return $query->whereHas('roles', function ($q) {
+            $q->where('name', 'Super Admin');
+        });
+    }
+    public function scopeIsCompanyAdmin($query)
+    {
+        return $query->whereHas('roles', function ($q) {
+            $q->where('name', 'Company Admin');
+        });
+    }
+    public function scopeIsCustomer($query)
+    {
+        return $query->whereHas('roles', function ($q) {
+            $q->where('name', 'Customer');
+        });
     }
 }
